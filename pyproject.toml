@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lexical-substitution-pipeline"
+version = "0.1.0"
+description = "A context-sensitive lexical substitution pipeline with SWORDS evaluation utilities."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "datasets>=4.5.0",
+    "lemminflect>=0.2.2",
+    "matplotlib>=3.10.8",
+    "nltk>=3.9.3",
+    "numpy>=1.26.4",
+    "pandas>=2.3.3",
+    "scikit-learn>=1.8.0",
+    "seaborn>=0.13.2",
+    "sentence-transformers>=5.3.0",
+    "spacy>=3.8.11",
+    "torch>=2.10.0",
+    "transformers>=4.57.1",
+]
+
+[project.scripts]
+lexsub = "pipeline.cli:main"
+lexsub-eval = "evaluate_swords:main"
+lexsub-plot-report = "plot_swords_report:main"
+lexsub-train-substitute = "train_swords_substitute_classifier:main"
+lexsub-train-ranker = "train_swords_ranker:main"
+
+[tool.setuptools]
+packages = ["pipeline"]
+py-modules = [
+    "evaluate_swords",
+    "plot_swords_report",
+    "swords_utils",
+    "train_swords_ranker",
+    "train_swords_substitute_classifier",
+]
+
+[tool.setuptools.package-data]
+pipeline = ["resources/*.json"]

@@ -1,0 +1,16 @@
+{
+  "split": "dev",
+  "swords_path": "data/swords/swords-v1.1_dev.json.gz",
+  "targets": 370,
+  "candidates": 22978,
+  "single_word_candidate_rate": 0.8239620506571503,
+  "mean_gold_score": 0.11143267473235269,
+  "model_targets": 370,
+  "learned_ranker_model": "./learned_ranker.pkl",
+  "model_metrics_at_top_k": {
+    "ndcg@10": 0.531445620547416,
+    "map@10": 0.3561935204762586,
+    "precision@10": 0.26271235521235525,
+    "pairwise_accuracy": 0.6235716790325428
+  }
+}
